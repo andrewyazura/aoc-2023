@@ -5,9 +5,14 @@ pub struct Solution;
 impl solution::Solution<1, Vec<String>, u32> for Solution {
     fn process_input(&self, input: String) -> Vec<String> {
         input
-            .split('\n')
-            .filter(|s| !s.is_empty())
-            .map(|s| s.to_owned())
+            .lines()
+            .filter_map(|line| {
+                if line.is_empty() {
+                    None
+                } else {
+                    Some(line.to_owned())
+                }
+            })
             .collect()
     }
 

@@ -87,3 +87,40 @@ fn text_to_int(text: &str) -> Option<u32> {
         _ => None,
     }
 }
+
+#[cfg(test)]
+mod tests {
+    use crate::solution::Solution as SolutionTrait;
+    use crate::solutions::day_01::Solution;
+
+    const SOLUTION: Solution = Solution;
+
+    #[test]
+    fn test_part_1() {
+        const SAMPLE_INPUT: &str = "\
+1abc2
+pqr3stu8vwx
+a1b2c3d4e5f
+treb7uchet
+";
+
+        let input = SOLUTION.process_input(SAMPLE_INPUT.to_owned());
+        assert_eq!(SOLUTION.part_1(&input), 142);
+    }
+
+    #[test]
+    fn test_part_2() {
+        const SAMPLE_INPUT: &str = "\
+two1nine
+eightwothree
+abcone2threexyz
+xtwone3four
+4nineeightseven2
+zoneight234
+7pqrstsixteen
+";
+
+        let input = SOLUTION.process_input(SAMPLE_INPUT.to_owned());
+        assert_eq!(SOLUTION.part_2(&input), 281);
+    }
+}

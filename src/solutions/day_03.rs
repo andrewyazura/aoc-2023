@@ -104,7 +104,7 @@ impl solution::Solution<3, EngineSchematic, u32> for Solution {
         for (number, line, start, end) in &input.numbers {
             for line_index in line.saturating_sub(1)..=line.saturating_add(1) {
                 for char_index in start.saturating_sub(1)..end.saturating_add(1) {
-                    if input.symbols.contains(&(line_index, char_index)) {
+                    if input.gears.contains(&(line_index, char_index)) {
                         gear_collisions
                             .entry((line_index, char_index))
                             .or_insert_with(Vec::new)

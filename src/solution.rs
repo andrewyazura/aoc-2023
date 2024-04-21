@@ -15,9 +15,9 @@ pub trait Solution<const DAY: u8, T, R: Display> {
         let processed_input = self.process_input(self.load_input());
 
         let result_1 = self.part_1(&processed_input);
-        println!("Result from part 1: {}", result_1);
+        println!("Result from day {} part 1: {}", DAY, result_1);
 
         let result_2 = self.part_2(&processed_input);
-        println!("Result from part 2: {}", result_2);
+        println!("Result from day {} part 2: {}", DAY, result_2);
     }
 }
